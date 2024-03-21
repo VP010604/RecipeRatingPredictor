@@ -1,6 +1,6 @@
 # Recipe Ratings Predictor
 
-by Raymond Williams, Varun Pabreja (vpabreja@ucsd.edu)
+by Raymond Williams, Varun Pabreja (r7williams@ucsd.edu, vpabreja@ucsd.edu)
 
 ---
 
