@@ -1,4 +1,4 @@
-# Recipe Ratings Predictor
+# Project Leads
 
 by Raymond Williams, Varun Pabreja (r7williams@ucsd.edu, vpabreja@ucsd.edu)
 
