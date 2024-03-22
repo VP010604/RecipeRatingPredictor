@@ -26,6 +26,8 @@ Why should you care about this project? In today's day and age, individuals lear
 
 The descriptions of the dataset has been provided above. As of now, all the columns are relevant to our analysis. Before each step begins, we shall **highlight** the relevant columns that we use for our analysis in that step.
 
+This marks the end of Section 1 - Introduction
+
 ---
 
 ## Data Cleaning and Exploratory Data Analysis
@@ -40,7 +42,13 @@ Another major data transformation that we completed was creating a new column th
 
 This concludes the majority of the data cleaning needed in our data set. A snippet of the cleaned dataframe is provided below:
 
-
+|   Index |   minutes |   n_steps |   n_ingredients |   average_rating |   minutes_winsorized |   average_rating_aggregated |   calories |   calories_winsorized |
+|---:     |----------:|----------:|----------------:|-----------------:|---------------------:|----------------------------:|-----------:|----------------------:|
+|       0 |        40 |        10 |               9 |                4 |                   40 |                           4 |      138.4 |                 138.4 |
+|       1 |        45 |        12 |              11 |                5 |                   45 |                           5 |      595.1 |                 595.1 |
+|       2 |        40 |         6 |               9 |                5 |                   40 |                           5 |      194.8 |                 194.8 |
+|       3 |       120 |         7 |               7 |                5 |                  120 |                           5 |      878.3 |                 878.3 |
+|       4 |        90 |        17 |              13 |                5 |                   90 |                           5 |      267   |                 267   |
 
 We will now move on to the univariate, bivariate, and display some interesting aggregations on our dataframe.
 
@@ -57,18 +65,43 @@ From the graph, we see that the distribution is **heavily negatively skewed** wi
 
 For our bivariate analysis, we look at the distributions of steps as the number of ingredients increases. We do this by using box plots so we can visualize it all at once. 
 
-
+<iframe
+  src="assets/plot4.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 From the graph, we see that as the number of ingredients increases, in general, the number of steps does too. This is evident by the vertical shifting of the box plots as we move right on the graph. It also makes sense, logically, as we increase the number of ingredients, it will take more steps to incorporate all of them. 
 
 One interesting aggregation we utilized was to help understand if there are any relationships present between ingredients, minutes, and ratings. In the table, the data is grouped by ingredients, and the minutes are aggregated by both mean and median. In addition, the average rating column is aggregated by mean for each ingredient group.
 
+The whole table had 34 rows and 4 columns. For simplicity's sake, the first 7 and the final 7 have been shown.
+
+The first 7:
+
+| Index | n_ingredients | Minutes_Winsorized_Mean | Minutes_Winsorized_Median | Average_Rating_Mean |
+|-------|---------------|-------------------------|---------------------------|---------------------|
+| 0     | 1             | 39.15                   | 12.0                      | 4.86                |
+| 1     | 2             | 57.13                   | 10.0                      | 4.69                |
+| 2     | 3             | 47.82                   | 10.0                      | 4.66                |
+| 3     | 4             | 41.94                   | 15.0                      | 4.63                |
+| 4     | 5             | 49.52                   | 20.0                      | 4.65                |
+| 5     | 6             | 53.36                   | 25.0                      | 4.63                |
+| 6     | 7             | 57.72                   | 30.0                      | 4.62                |
+
+The final 7:
+
+| Index | n_ingredients | Minutes_Winsorized_Mean | Minutes_Winsorized_Median | Average_Rating_Mean |
+|-------|---------------|-------------------------|---------------------------|---------------------|
+| 27    | 28            | 102.94                  | 70.0                      | 4.86                |
+| 28    | 29            | 104.60                  | 57.5                      | 4.97                |
+| 29    | 30            | 122.64                  | 80.0                      | 4.87                |
+| 30    | 31            | 165.00                  | 87.5                      | 5.00                |
+| 31    | 32            | 55.00                   | 55.0                      | 5.00                |
+| 32    | 33            | 35.00                   | 35.0                      | 5.00                |
+| 33    | 37            | 240.00                  | 240.0                     | 5.00                |
+
 From the table, we see in the data that recipes that had only one ingredient, took the shortest amount of time to prepare and (perhaps) consequently had the highest ratings. However, for the other groups, namely n_ingredients greater than 1, the minutes seem to be highly variable, and the ratings tend to decrease, although very slightly.
 
-
-<iframe
-  src="assets/plot1.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+This marks the end of Section 2 - Data Cleaning and EDA.
