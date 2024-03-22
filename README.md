@@ -42,7 +42,7 @@ Another major data transformation that we completed was creating a new column th
 
 This concludes the majority of the data cleaning needed in our data set. A snippet of the cleaned dataframe is provided below:
 
-|   minutes |   n_steps |   n_ingredients |   average_rating |   minutes_winsorized |   average_rating_aggregated |   calories |   calories_winsorized |
+| minutes&nbsp;| n_steps&nbsp;| n_ingredients&nbsp;| average_rating&nbsp;| minutes_winsorized&nbsp;| average_rating_aggregated&nbsp;| calories&nbsp;| calories_winsorized&nbsp;|
 |----------:|----------:|----------------:|-----------------:|---------------------:|----------------------------:|-----------:|----------------------:|
 |        40 |        10 |               9 |                4 |                   40 |                           4 |      138.4 |                 138.4 |
 |        45 |        12 |              11 |                5 |                   45 |                           5 |      595.1 |                 595.1 |
@@ -83,7 +83,7 @@ The whole table had 34 rows and 4 columns. For simplicity's sake, the first 7 an
 
 The first 7:
 
-| Index | n_ingredients | Minutes_Winsorized_Mean | Minutes_Winsorized_Median | Average_Rating_Mean |
+| Index&nbsp;| n_ingredients&nbsp;| Minutes_Winsorized_Mean&nbsp;| Minutes_Winsorized_Median&nbsp;| Average_Rating_Mean&nbsp;|
 |-------|---------------|-------------------------|---------------------------|---------------------|
 | 0     | 1             | 39.15                   | 12.0                      | 4.86                |
 | 1     | 2             | 57.13                   | 10.0                      | 4.69                |
@@ -95,7 +95,7 @@ The first 7:
 
 The final 7:
 
-| Index | n_ingredients | Minutes_Winsorized_Mean | Minutes_Winsorized_Median | Average_Rating_Mean |
+| Index&nbsp;| n_ingredients&nbsp;| Minutes_Winsorized_Mean&nbsp;| Minutes_Winsorized_Median&nbsp;| Average_Rating_Mean&nbsp;|
 |-------|---------------|-------------------------|---------------------------|---------------------|
 | 27    | 28            | 102.94                  | 70.0                      | 4.86                |
 | 28    | 29            | 104.60                  | 57.5                      | 4.97                |
@@ -119,9 +119,16 @@ This marks the end of Section 2 - Data Cleaning and EDA.
 
 Our null hypothesis: The distribution of n-steps is the same regardless of whether ratings is missing or not, with any differences being due to chance.
 
-Our alternate hypothesis: The distribution of n-steps when ratings is missing differs from the distribution of n-steps when rating is present. 
+Our alternate hypothesis: The distribution of n-steps when ratings is missing differs from the distribution of n-steps when rating is present.
 
-Test Statistic: We started off utilizing the absolute difference in means to analyze the difference between the two distributions, but then moved on to the KS statistic since we noticed upon graphing that the distributions were relatively similar in shape. So while both tests yielded the same results in the end we felt it appropriate to use the KS statistic.
+<iframe
+  src="assets/plot5.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+Test Statistic: We started off utilizing the absolute difference in means to analyze the difference between the two distributions, but then moved on to the KS statistic since we noticed upon graphing that the distributions were relatively similar in shape.
 
 Result: In the end, we achieved a **p-value of 0.0 (3.18 x 10^-13)** meaning that the difference between the two distributions is highly unlikely to be due to chance. Therefore, we **reject the null hypothesis**. From this, we can determine that the missingness of the average ratings column is likely dependent on the n_steps column meaning that the missingness relationship present here is MAR.
 
@@ -130,6 +137,13 @@ MAR vs MCAR (n_ingredients vs average rating): Much like the missingness analysi
 Null Hypothesis: The distribution of n-ingredients is the same regardless of whether ratings is missing or not, with any differences being due to chance.
 
 Our alternate hypothesis: The distribution of n-ingredients when ratings is missing differs from the distribution of n-steps when rating is present. 
+
+<iframe
+  src="assets/plot6.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 Test Statistic: Much like the other test, we started off utilizing the absolute difference in means to analyze the difference between the two distributions, but then moved on to the KS statistic since we noticed upon graphing that the distributions were relatively similar in shape. So while both tests yielded the same results in the end we felt it appropriate to use the KS statistic.
 
