@@ -108,3 +108,30 @@ The final 7:
 From the table, we see in the data that recipes that had only one ingredient, took the shortest amount of time to prepare and (perhaps) consequently had the highest ratings. However, for the other groups, namely n_ingredients greater than 1, the minutes seem to be highly variable, and the ratings tend to decrease, although very slightly.
 
 This marks the end of Section 2 - Data Cleaning and EDA.
+
+---
+
+## Data Cleaning and Exploratory Data Analysis
+
+**NMAR Analysis**: While the data does have missing values namely in the name, description, and average_rating columns, we determined none of these values to be NMAR. Of those columns, only one had a significant number of missing values: the average rating column. NMAR by definition means that the value of the ratings themselves impacts their missingness. There is no value of which the average rating could be that would cause users to systematically not put down a rating. For example, if someone tried a recipe and thought it were extremely bad, we argue that they would be more likely to rate it low on the website than not rate it at all. Similarly, if someone tried a recipe and thought it was extremely good, once again, we argue that they would be more likely to go on the website and rate it than not rate it at all. It doesn’t make sense logically here. As a result, we believe if there are any missingness relationships to be had here, we believe they would have to either be MAR or MCAR.
+
+**MAR vs MCAR Analysis (nsteps vs average rating)**: Since the average rating column is the only column in our data set within which the missingness actually holds relevance, we will conduct our missingness analysis on this column. Specifically, we will conduct our missingness analysis with respect to this column and the n-steps column.
+
+Our null hypothesis: The distribution of n-steps is the same regardless of whether ratings is missing or not, with any differences being due to chance.
+
+Our alternate hypothesis: The distribution of n-steps when ratings is missing differs from the distribution of n-steps when rating is present. 
+
+Test Statistic: We started off utilizing the absolute difference in means to analyze the difference between the two distributions, but then moved on to the KS statistic since we noticed upon graphing that the distributions were relatively similar in shape. So while both tests yielded the same results in the end we felt it appropriate to use the KS statistic.
+
+Result: In the end, we achieved a **p-value of 0.0 (3.18 x 10^-13)** meaning that the difference between the two distributions is highly unlikely to be due to chance. Therefore, we **reject the null hypothesis**. From this, we can determine that the missingness of the average ratings column is likely dependent on the n_steps column meaning that the missingness relationship present here is MAR.
+
+MAR vs MCAR (n_ingredients vs average rating): Much like the missingness analysis test above we will now conduct another permutation test, this time between the number of ingredients and whether the ratings column is missing or not.
+
+Null Hypothesis: The distribution of n-ingredients is the same regardless of whether ratings is missing or not, with any differences being due to chance.
+
+Our alternate hypothesis: The distribution of n-ingredients when ratings is missing differs from the distribution of n-steps when rating is present. 
+
+Test Statistic: Much like the other test, we started off utilizing the absolute difference in means to analyze the difference between the two distributions, but then moved on to the KS statistic since we noticed upon graphing that the distributions were relatively similar in shape. So while both tests yielded the same results in the end we felt it appropriate to use the KS statistic.
+
+Result: In the end, we achieved a **p-value of 0.11 (0.11232147746623422)** meaning that we **failed to reject the null hypothesis** and that the difference in the two distributions can be attributed to chance. Since statistically the distributions are similar, we can say that the data doesn’t really change regardless of whether minutes are missing or not as a result of the missingness relationship between n_ingredients and average_ratings being MCAR.
+
