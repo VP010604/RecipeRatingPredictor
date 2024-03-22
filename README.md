@@ -175,6 +175,15 @@ Observed Stat: We found that the current observed statistic between high and low
 
 To test our hypothesis against the null we ran a permutation test 10000 times and created a distribution of the differences in high and low cooking time columns. We then compared our observed statistic to the distribution to see what proportion of times the null difference ended up larger than or equal to our observed one. 
 
+The resultant graph of the perumtation test is below:
+
+<iframe
+  src="assets/plot7.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 Result: Our p-value ended up being **0.0** meaning that it is highly unlikely that our observed difference is due to chance. In such a case we can **reject the null hypothesis**. 
 
 Interpretation: The observed difference in our data can likely be attributed to the fact that as we mentioned earlier people simply don’t have the patience for long recipes. We are all busy and at the end of the day, we all want some quick, tasty, and nutritious food to feed us. As a result, the low cooking time recipes are rated higher, and this is likely not due to chance. This is likely the reason for the discrepancy.
@@ -257,10 +266,18 @@ Null Hypothesis: The accuracies of short recipes and long recipes in our model a
 
 Alternate Hypothesis: The accuracy of short recipes will be higher than the accuracy of longer recipes in our model.
 
-Test Stat: Since we want to see which group is favored in this case, we will use a difference of accuracies (short time - high time)  as our test statistic and a p-value of 0.01 to be certain.
+Test Stat: Since we want to see which group is favored in this case, we will use a difference of accuracies (short time - high time) as our test statistic and a p-value of 0.01 to be certain.
+
+The resultant graph of the perumtation test is below:
+
+<iframe
+  src="assets/plot8.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 Results:  We ended with an observed accuracy difference of 0.04 which displayed a p_value of 0.0. As a result, we can reasonably reject our null hypothesis and say that our model is very likely an unfair model with a bias towards shorter recipes. 
-
 
 This marks the end of Section 8 - Fairness Analysis.
 
