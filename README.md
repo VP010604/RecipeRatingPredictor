@@ -29,17 +29,3 @@ The descriptions of the dataset has been provided above. As of now, all the colu
 ---
 
 ## Data Cleaning and Exploratory Data Analysis
-
-<iframe
-  src="assets/plot1.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-<iframe
-  src="assets/plot2.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
