@@ -42,13 +42,16 @@ Another major data transformation that we completed was creating a new column th
 
 This concludes the majority of the data cleaning needed in our data set. A snippet of the cleaned dataframe is provided below:
 
-|   Index |   minutes |   n_steps |   n_ingredients |   average_rating |   minutes_winsorized |   average_rating_aggregated |   calories |   calories_winsorized |
-|---:     |----------:|----------:|----------------:|-----------------:|---------------------:|----------------------------:|-----------:|----------------------:|
-|       0 |        40 |        10 |               9 |                4 |                   40 |                           4 |      138.4 |                 138.4 |
-|       1 |        45 |        12 |              11 |                5 |                   45 |                           5 |      595.1 |                 595.1 |
-|       2 |        40 |         6 |               9 |                5 |                   40 |                           5 |      194.8 |                 194.8 |
-|       3 |       120 |         7 |               7 |                5 |                  120 |                           5 |      878.3 |                 878.3 |
-|       4 |        90 |        17 |              13 |                5 |                   90 |                           5 |      267   |                 267   |
+|   minutes |   n_steps |   n_ingredients |   average_rating |   minutes_winsorized |   average_rating_aggregated |   calories |   calories_winsorized |
+|----------:|----------:|----------------:|-----------------:|---------------------:|----------------------------:|-----------:|----------------------:|
+|        40 |        10 |               9 |                4 |                   40 |                           4 |      138.4 |                 138.4 |
+|        45 |        12 |              11 |                5 |                   45 |                           5 |      595.1 |                 595.1 |
+|        40 |         6 |               9 |                5 |                   40 |                           5 |      194.8 |                 194.8 |
+|       120 |         7 |               7 |                5 |                  120 |                           5 |      878.3 |                 878.3 |
+|        90 |        17 |              13 |                5 |                   90 |                           5 |      267   |                 267   |
+
+Note that some of the columns were irrelevant - this included the 'name', 'id', 'contributor_id', 'submitted', 'tags', 'nutrition', 'steps', 'description', 'ingredients' columns. These columns have been removed from the above display, so as to ensure only the relevant information has been displayed.
+Further note that the 'calories' and 'calories_winsorized' columns have been obtained from the 'nutrition' column from **Recipe Ratings** and appropriately winsorizing this column respectively.
 
 We will now move on to the univariate, bivariate, and display some interesting aggregations on our dataframe.
 
