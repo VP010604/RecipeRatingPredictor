@@ -42,7 +42,7 @@ Another major data transformation that we completed was creating a new column th
 
 This concludes the majority of the data cleaning needed in our data set. A snippet of the cleaned dataframe is provided below:
 
-| minutes&nbsp;| n_steps&nbsp;| n_ingredients&nbsp;| average_rating&nbsp;| minutes_winsorized&nbsp;| average_rating_aggregated&nbsp;| calories&nbsp;| calories_winsorized&nbsp;|
+|&nbsp;minutes&nbsp;|&nbsp;n_steps&nbsp;|&nbsp;n_ingredients&nbsp;|&nbsp;average_rating&nbsp;|&nbsp;minutes_winsorized&nbsp;|&nbsp;average_rating_aggregated&nbsp;|&nbsp;calories&nbsp;|&nbsp;calories_winsorized&nbsp;|
 |----------:|----------:|----------------:|-----------------:|---------------------:|----------------------------:|-----------:|----------------------:|
 |        40 |        10 |               9 |                4 |                   40 |                           4 |      138.4 |                 138.4 |
 |        45 |        12 |              11 |                5 |                   45 |                           5 |      595.1 |                 595.1 |
@@ -83,7 +83,7 @@ The whole table had 34 rows and 4 columns. For simplicity's sake, the first 7 an
 
 The first 7:
 
-| Index&nbsp;| n_ingredients&nbsp;| Minutes_Winsorized_Mean&nbsp;| Minutes_Winsorized_Median&nbsp;| Average_Rating_Mean&nbsp;|
+|&nbsp;Index&nbsp;|&nbsp;n_ingredients&nbsp;|&nbsp;Minutes_Winsorized_Mean&nbsp;|&nbsp;Minutes_Winsorized_Median&nbsp;|&nbsp;Average_Rating_Mean&nbsp;|
 |-------|---------------|-------------------------|---------------------------|---------------------|
 | 0     | 1             | 39.15                   | 12.0                      | 4.86                |
 | 1     | 2             | 57.13                   | 10.0                      | 4.69                |
@@ -95,7 +95,7 @@ The first 7:
 
 The final 7:
 
-| Index&nbsp;| n_ingredients&nbsp;| Minutes_Winsorized_Mean&nbsp;| Minutes_Winsorized_Median&nbsp;| Average_Rating_Mean&nbsp;|
+|&nbsp;Index&nbsp;|&nbsp;n_ingredients&nbsp;|&nbsp;Minutes_Winsorized_Mean&nbsp;|&nbsp;Minutes_Winsorized_Median&nbsp;|&nbsp;Average_Rating_Mean&nbsp;|
 |-------|---------------|-------------------------|---------------------------|---------------------|
 | 27    | 28            | 102.94                  | 70.0                      | 4.86                |
 | 28    | 29            | 104.60                  | 57.5                      | 4.97                |
