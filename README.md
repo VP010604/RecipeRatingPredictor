@@ -251,6 +251,17 @@ This marks the end of Section 7 - Final Model.
 
 ## Fairness Analysis
 
+The final part of our model development process was finding out whether our model was fair, in other words, did it make good predictions for all groups found within the data. For this model, we will be looking at if we can make equally good predictions for both long recipes and short recipes. And we will access this using model accuracy as a metric. In this case, we are seeking a form of Equality of Accuracy Parity and making sure both groups (short and long recipes) exhibit similar model accuracy. We use this metric since for the sake of this fairness analysis (only) we are considering short and long recipes to be of equal standing in this dataset. We access this by conducting a permutation test. 
+
+Null Hypothesis: The accuracies of short recipes and long recipes in our model are the same with any difference being due to chance. 
+
+Alternate Hypothesis: The accuracy of short recipes will be higher than the accuracy of longer recipes in our model.
+
+Test Stat: Since we want to see which group is favored in this case, we will use a difference of accuracies (short time - high time)  as our test statistic and a p-value of 0.01 to be certain.
+
+Results:  We ended with an observed accuracy difference of 0.04 which displayed a p_value of 0.0. As a result, we can reasonably reject our null hypothesis and say that our model is very likely an unfair model with a bias towards shorter recipes. 
+
+
 This marks the end of Section 8 - Fairness Analysis.
 
 ---
